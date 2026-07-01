@@ -137,7 +137,25 @@ Final code-work responses should include:
 
 These rules are working if diffs get smaller, rewrites from overcomplication decrease, and clarification happens before implementation mistakes.
 
-## 8. Git Boundaries
+## 8. Greenfield Project Mode
+
+When starting from an empty or near-empty project, first establish the smallest runnable foundation.
+
+Before implementation:
+- clarify product goal, target users, runtime, stack constraints, and success criteria;
+- propose the minimal architecture needed for the first working vertical slice;
+- avoid speculative infrastructure, but create necessary project scaffolding, tests, config, and documentation.
+
+Initial implementation should include:
+- minimal directory structure;
+- dependency and environment setup;
+- one working end-to-end path;
+- test/lint/typecheck/build commands when applicable;
+- README with setup and validation steps.
+
+Do not add optional features, unused abstractions, placeholder systems, broad plugin architectures, or premature scaling layers.
+
+## 9. Git Boundaries
 
 Do not run commands that contact or mutate remote repositories:
 
@@ -148,5 +166,3 @@ Do not run commands that contact or mutate remote repositories:
 * `git remote add`,
 * `git remote remove`,
 * `git remote set-url`.
-
-Do not create, trigger, or attribute Git commits through Trellis-related workflows.
